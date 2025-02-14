@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <meta name="author" content="Naresh Magatham"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./assets/redsail_logo.png">
+    <title>RedSail</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        function toggleSidebar() {
+            document.querySelector(".sidebar").classList.toggle("active");
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <i class="fas fa-bars menu-icon"></i>
+            <img src="./assets/logo.jpg" alt="RedSail" class="logo" id="Logo">
+        </div>
+        <div class="nav-middle">
+            <input type="text" id="search-input" class="search-bar" placeholder="Welcome to RedSail !!!">
+            <button class="search-btn" onclick="searchVideos()"><i class="fas fa-search"></i></button>
+            <i class="fa-solid fa-microphone voice-search"></i>
+        </div>
+        <div class="nav-right">
+            <i class="fas fa-video"></i>
+            <i class="fas fa-bell"></i>
+            <button class="login-btn" onclick="login()">Login</button>
+            <div style="display: none;">
+            <img src="./assets/profile_icon.jpeg" id="profileImg" class="profile-pic"onclick="toggleLogoutPopup()"/></div>
+        </div>
+    </nav>
+    <div class="sidebar">
+        <div class="sidebar-item"><i class="fas fa-home"></i> <p>Home</p></div>
+        <div class="sidebar-item"><i class="fa-solid fa-film"></i><p>Shorts</p></div>
+        <div class="sidebar-item"><i class="fas fa-play-circle"></i> <p>Subscriptions</p></div>
+        <div class="sidebar-item"><i class="fa-regular fa-user"></i><p>You</p></div>
+        <hr>
+        <div class="sidebar-item"><i class="fas fa-folder"></i> <p>Library</p></div>
+        <div class="sidebar-item"><i class="fas fa-history"></i><p>History</p></div>
+        <div class="sidebar-item"><i class="fas fa-clock"></i> <p>Watch Later</p></div>
+        <div class="sidebar-item"><i class="fas fa-thumbs-up"></i> <p>Liked Videos</p></div>
+        <div class="sidebar-item"><i class="fa-solid fa-video"></i><p>Playlist</p></div>
+        <div class="sidebar-item"><i class="fa-solid fa-list"></i> <p>All Subscriptions</p></div>
+        <hr>
+        <h1 class="explore"><p>Explore</p></h1>
+        <div class="sidebar-item"><i class="fas fa-fire"></i> <p>Trending</p></div>
+        <div class="sidebar-item"><i class="fa-solid fa-ticket"></i><p>Movies</p></div>
+        <div class="sidebar-item"><i class="fa-solid fa-gamepad"></i><p>Gaming</p></div>
+        <div class="sidebar-item"><i class="fa-solid fa-gear"></i><p>Settings</p></div>
+    </div>
+    <div class="suggestions-bar">
+        <div class="suggestion active">All</div>
+        <div class="suggestion">Music</div>
+        <div class="suggestion">Mashup</div>
+        <div class="suggestion">Live</div>
+        <div class="suggestion">News</div>
+        <div class="suggestion">Anantapur</div>
+        <div class="suggestion">Breaking News</div>
+        <div class="suggestion">Andhra</div>
+        <div class="suggestion">Technology</div>
+        <div class="suggestion">Education</div>
+        <div class="suggestion">Sports</div>
+        <div class="suggestion">Doremon</div>
+        <div class="suggestion">Comedy</div>
+        <div class="suggestion">Nobita</div>
+        <div class="suggestion">United States</div>
+        <div class="suggestion">Electrical</div>
+    </div>
+    <div class="video-section" id="video-results">
+        <div class="video">
+            <img src="./assets/doremon thumbnail.jpeg" class="thumbnail" alt="Video Thumbnail">
+            <div class="video-info">
+                <img src="./assets/doremon.jpeg" class="channel-logo" alt="Channel Logo">
+                <div class="video-details">
+                    <h4 class="video-title">Doremon Original Story</h4>
+                    <p class="channel-name">Doremon</p>
+                    <p class="video-stats">1.2M views • 2 days ago</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="video">
+            <img src="./assets/nature.jpeg" class="thumbnail" alt="Video Thumbnail">
+            <div class="video-info">
+                <img src="./assets/uma-profile.jpg" class="channel-logo" alt="Channel Logo">
+                <div class="video-details">
+                    <h4 class="video-title">Let's Delve Into Mother Nature</h4>
+                    <p class="channel-name">umamaheshvlogs</p>
+                    <p class="video-stats">750K views • 1 week ago</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="video">
+            <img src="./assets/asad-channel.jpeg" class="thumbnail" alt="Video Thumbnail">
+            <div class="video-info">
+                <img src="./assets/asad-profile.jpg" class="channel-logo" alt="Channel Logo">
+                <div class="video-details">
+                    <h4 class="video-title">Gaming Highlights</h4>
+                    <p class="channel-name">Game with Asad</p>
+                    <p class="video-stats">500K views • 3 days ago</p>
+                </div>
+            </div>
+        </div>
+        <div class="video">
+            <img src="./assets/venu-channel.jpeg" class="thumbnail" alt="Video Thumbnail">
+            <div class="video-info">
+                <img src="./assets/venu-profile.jpg" class="channel-logo" alt="Channel Logo">
+                <div class="video-details">
+                    <h4 class="video-title">Indian Law Explained</h4>
+                    <p class="channel-name">Learn Law with Venu</p>
+                    <p class="video-stats">900K views • 4 days ago</p>
+                </div>
+            </div>
+        </div>
+        <div class="video">
+            <img src="./assets/amd.jpeg" class="thumbnail" alt="Video Thumbnail">
+            <div class="video-info">
+                <img src="./assets/amd.jpeg" class="channel-logo" alt="Channel Logo">
+                <div class="video-details">
+                    <h4 class="video-title">The Manchester of India આપણું અમદાવાદ</h4>
+                    <p class="channel-name">Amdavad</p>
+                    <p class="video-stats">1.1M views • 5 days ago</p>
+                </div>
+            </div>
+        </div>
+        <div class="video">
+            <img src="./assets/somnath.jpeg" class="thumbnail" alt="Video Thumbnail">
+            <div class="video-info">
+                <img src="./assets/somnath.jpeg" class="channel-logo" alt="Channel Logo">
+                <div class="video-details">
+                    <h4 class="video-title">Live Somnath Darshan</h4>
+                    <p class="channel-name">Somnath</p>
+                    <p class="video-stats">8.2M views • 1 hour ago</p>
+                </div>
+            </div>
+        </div>
+        <div class="video">
+            <img src="./assets/italy.jpeg" class="thumbnail" alt="Video Thumbnail">
+            <div class="video-info">
+                <img src="./assets/italy.jpeg" class="channel-logo" alt="Channel Logo">
+                <div class="video-details">
+                    <h4 class="video-title">Visit Italy</h4>
+                    <p class="channel-name">Italiano</p>
+                    <p class="video-stats">8.2k views • 2 weeks ago</p>
+                </div>
+            </div>
+        </div>
+        <div class="video">
+            <img src="./assets/iscon.jpeg" class="thumbnail" alt="Video Thumbnail">
+            <div class="video-info">
+                <img src="./assets/iscon.jpeg" class="channel-logo" alt="Channel Logo">
+                <div class="video-details">
+                    <h4 class="video-title">అనంతపురం ఇస్కాన్ ఆలయం</h4>
+                    <p class="channel-name">Anantapur</p>
+                    <p class="video-stats">850k views • 3 days ago</p>
+                </div>
+            </div>
+        </div>
+        <div class="video">
+            <img src="./assets/konaseema.jpeg" class="thumbnail" alt="Video Thumbnail">
+            <div class="video-info">
+                <img src="./assets/konaseema.jpeg" class="channel-logo" alt="Channel Logo">
+                <div class="video-details">
+                    <h4 class="video-title">కోనసీమ అందాలను చూడటానికి రండి</h4>
+                    <p class="channel-name">coastalAndhra</p>
+                    <p class="video-stats">2.2M views • 8 weeks ago</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+<div id="video-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeVideoModal()">&times;</span>
+        <iframe id="video-frame" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+    
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAuthModal()">&times;</span>
+            <h2 id="modalTitle">Login</h2>
+            
+            <!-- Login Form -->
+            <div id="loginForm" class="login-section">
+                <input type="text" id="loginName" placeholder="Enter your Name">
+                <input type="password" id="loginEmail" placeholder="Enter your Password">
+                <button onclick="login()">Login</button>
+                <p class="para">Don't have an account? <a href="#" onclick="switchToSignUp()" class="an-sig">Sign Up</a></p>
+            </div>
+    
+            <div id="signUpForm" style="display: none;">
+                <input type="text" id="signUpName" placeholder="Enter your Name">
+                <input type="email" id="signUpEmail" placeholder="Enter your Email">
+                <input type="password" id="signUpPassword" placeholder="Enter your Password">
+                <button onclick="signUp()" class="sigup">Sign Up</button>
+                <p class="para">Already have an account? <a href="#" onclick="switchToLogin()" class="an-sig">Login</a></p>
+            </div>
+            <p id="message" ></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
