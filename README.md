@@ -9,3 +9,8 @@ Features:
 ✅ Built with love ❤️
 
 🔗 Check it out & give it a ⭐ if you like it!
+
+Desktop view
+
+![image](https://github.com/user-attachments/assets/e4cf3c8c-cdcf-4af4-ad37-dbb5f0f20f76)
+
